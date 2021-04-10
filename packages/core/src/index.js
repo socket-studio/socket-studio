@@ -29,6 +29,7 @@ async function main() {
     resolvers,
     uploads: false,
     playground: true,
+    introspection: true,
   });
 
   app.use(pinoHttp({ logger, useLevel: 'debug' }));
