@@ -4,7 +4,7 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "yarn workspace core dev",
-    "start": "yarn workspace core start"
+    "dev": "yarn workspace @socket-studio/core dev",
+    "start": "yarn workspace @socket-studio/core start"
   }
 }
