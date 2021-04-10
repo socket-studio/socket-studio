@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "yarn workspace core dev",
+    "start": "yarn workspace core start"
+  }
+}

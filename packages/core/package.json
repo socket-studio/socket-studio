@@ -1,0 +1,37 @@
+{
+  "private": true,
+  "name": "@socket-studio/core",
+  "version": "0.0.1",
+  "author": "Jason Lengstorf <jason@lengstorf.com> (https://lengstorf.com)",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon --trace-warnings src/index.js"
+  },
+  "dependencies": {
+    "@jlengstorf/get-twitch-oauth": "^1.0.0",
+    "apollo-server-express": "^2.18.2",
+    "basic-auth": "^2.0.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-jwt": "^6.0.0",
+    "graphql": "^15.3.0",
+    "graphql-subscriptions": "^1.1.0",
+    "graphql-tools": "^7.0.4",
+    "honeycomb-beeline": "^2.4.0",
+    "jwks-rsa": "^2.0.2",
+    "lru-cache": "^6.0.0",
+    "node-fetch": "^2.6.1",
+    "pino": "^6.7.0",
+    "pino-http": "^5.3.0",
+    "pino-pretty": "^4.3.0",
+    "subscriptions-transport-ws": "^0.9.18",
+    "tmi.js": "^1.5.0",
+    "uuid-apikey": "^1.4.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

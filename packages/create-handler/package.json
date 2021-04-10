@@ -1,0 +1,19 @@
+{
+  "name": "@socket-studio/create-handler",
+  "version": "2.0.3",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "author": "Jason Lengstorf <jason@lengstorf.com> (https://lengstorf.com)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/socket-studio/socket-studio"
+  },
+  "scripts": {
+    "build": "tsc src/index.ts --outDir . -d",
+    "prepublish": "npm run build"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^3.9.7"
+  }
+}
