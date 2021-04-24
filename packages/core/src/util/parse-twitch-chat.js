@@ -10,16 +10,23 @@ exports.parseCommand = message => {
   };
 };
 
-exports.parseAuthor = (channel, meta) => ({
-  id: meta['user-id'],
-  username: meta['display-name'],
-  roles: [
-    meta.mod && 'MODERATOR',
-    meta.subscriber && 'SUBSCRIBER',
-    channel.replace('#', '').toLowerCase() ===
-      meta['display-name'].toLowerCase() && 'BROADCASTER',
-  ].filter(Boolean),
-});
+exports.parseAuthor = (channel, meta) => {
+  if (!meta['display-name']) {
+    console.warn('No display name found');
+    console.dir(meta);
+  }
+
+  return {
+    id: meta['user-id'],
+    username: meta['display-name'],
+    roles: [
+      meta.mod && 'MODERATOR',
+      meta.subscriber && 'SUBSCRIBER',
+      channel.replace('#', '').toLowerCase() ===
+        meta['display-name']?.toLowerCase() && 'BROADCASTER',
+    ].filter(Boolean),
+  };
+};
 
 exports.parseEmotes = (message, emotesData) => {
   // loop through each emote used in this message
