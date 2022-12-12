@@ -58,6 +58,7 @@ exports.typeDefs = gql`
     author: TwitchChatAuthor!
     emotes: [TwitchEmote!]!
     time: Date!
+    highlighted: Boolean!
   }
 
   type TwitchChatCommand implements TwitchMessage {
@@ -122,7 +123,7 @@ exports.typeDefs = gql`
   }
 `;
 
-exports.createResolvers = pubsub => {
+exports.createResolvers = (pubsub) => {
   return {
     Date: new GraphQLScalarType({
       name: 'Date',
@@ -156,9 +157,9 @@ exports.createResolvers = pubsub => {
                 'Client-ID': process.env.TWITCH_CLIENT_ID,
               },
             })
-              .then(res => res.json())
-              .then(res => res.data)
-              .catch(err => console.error(err)),
+              .then((res) => res.json())
+              .then((res) => res.data)
+              .catch((err) => console.error(err)),
             fetch(
               `https://api.twitch.tv/helix/streams?user_login=${username}`,
               {
@@ -169,9 +170,9 @@ exports.createResolvers = pubsub => {
                 },
               },
             )
-              .then(res => res.json())
-              .then(res => res.data)
-              .catch(err => console.error(err)),
+              .then((res) => res.json())
+              .then((res) => res.data)
+              .catch((err) => console.error(err)),
           ]);
 
           return {

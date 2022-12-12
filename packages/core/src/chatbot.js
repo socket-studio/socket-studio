@@ -112,6 +112,8 @@ exports.createChatBot = (pubsub, subChannel) => {
       return;
     }
 
+    const highlighted = meta['msg-id'] === 'highlighted-message';
+
     // chat activity always includes author and emote data
     const time = new Date(parseInt(meta['tmi-sent-ts']));
 
@@ -132,6 +134,7 @@ exports.createChatBot = (pubsub, subChannel) => {
       message.args = args;
     } else {
       message.html = getMessageHTML(msg, message.emotes);
+      message.highlighted = highlighted;
     }
 
     pubsub.publish('MESSAGE', { message });
